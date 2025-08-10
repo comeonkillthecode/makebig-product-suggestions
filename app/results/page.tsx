@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { ProductResults } from "@/components/product-results"
 
 export default function ResultsPage() {
-  const searchParams = useSearchParams()
+  // const searchParams = useSearchParams()
   const router = useRouter()
   const [results, setResults] = useState(null)
   const [loading, setLoading] = useState(true)

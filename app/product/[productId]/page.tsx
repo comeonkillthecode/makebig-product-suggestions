@@ -7,7 +7,7 @@ import { ProductDetailView } from "@/components/product-details"
 export default function ProductDetailPage() {
   const params = useParams()
   const router = useRouter()
-  const searchParams = useSearchParams()
+  const _searchParams = useSearchParams()
   const [productData, setProductData] = useState(null)
   const [productName, setProductName] = useState('')
   const [loading, setLoading] = useState(true)
