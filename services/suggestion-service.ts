@@ -20,7 +20,6 @@ export class SuggestionService {
     const brands = ProductService.getBrandsByIds(formData.selectedBrands)
 
     const fullPrompt = this.getSystemPrompt() + "\n\n" + this.buildTablePrompt(formData, category, product, brands)
-    console.log(fullPrompt)
 
     // Generation configuration
     const generationConfig = {
@@ -59,8 +58,6 @@ export class SuggestionService {
       const response = await chat.sendMessage({
         message: [{ text: fullPrompt }]
       })
-
-      console.log(response)
 
       if (!response.text) {
         throw new Error("No response from Gemini API")
@@ -135,7 +132,7 @@ export class SuggestionService {
   - Example: ₹45,000 phone available for ₹38,000 after offers = INCLUDE IT
   
   **Link Requirements:**
-  - Amazon.in Search: https://www.amazon.in/s?k=[EXACT+MODEL+NAME]&ref=nb_sb_noss
+  - Amazon.in Search: https://www.amazon.in/s?k=[EXACT+MODEL+NAME]&tag=makebig-21
   - Flipkart Search: https://www.flipkart.com/search?q=[EXACT+MODEL+NAME]&marketplace=FLIPKART
   - Replace spaces with + signs in model names
   
@@ -171,5 +168,4 @@ export class SuggestionService {
   
   Output ONLY the requested markdown table with no additional text.`
   }
-
 }
