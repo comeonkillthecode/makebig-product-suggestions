@@ -278,7 +278,7 @@ export function ProductResults({ results, onBack }: ProductResultsProps) {
                 <CardHeader>
                   <div className="flex items-start justify-between">
                     <div>
-                      <CardTitle className="text-lg leading-tight">{product.modelName}</CardTitle>
+                      <CardTitle className="text-lg leading-tight font-bold">{product.modelName.replaceAll("*","")}</CardTitle>
                       <CardDescription className="mt-1">AI Recommended</CardDescription>
                     </div>
                     <Badge variant="secondary" className="flex items-center gap-1">
@@ -292,7 +292,6 @@ export function ProductResults({ results, onBack }: ProductResultsProps) {
                   {/* Price Information */}
                   <div className="space-y-1">
                     <div className="flex items-center gap-2 text-lg font-semibold text-green-600">
-                      <DollarSign className="h-4 w-4" />
                       {product.finalPrice || product.price}
                     </div>
                     {product.mrp && product.finalPrice && product.mrp !== product.finalPrice && (

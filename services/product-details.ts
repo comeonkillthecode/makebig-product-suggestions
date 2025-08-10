@@ -28,13 +28,13 @@ export class ProductDetailService {
 
     const generationConfig = {
       maxOutputTokens: 65535,
-      temperature: 0.1,
+      temperature: 0.01,
       topP: 0.95,
       seed: 0
     }
 
     try {
-      const model = 'gemini-2.5-flash'
+      const model = 'gemini-2.5-pro'
       const chat = ai.chats.create({
         model: model,
         config: generationConfig
